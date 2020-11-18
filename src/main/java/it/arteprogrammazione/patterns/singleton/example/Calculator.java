@@ -6,16 +6,24 @@ import org.slf4j.LoggerFactory;
 public class Calculator {
 
     private final static Logger logger = LoggerFactory.getLogger(Calculator.class);
+    private DatabaseService databaseService = new DatabaseService();
 
-    public final static int sum(int a, int b) {
+
+    public  int sum(int a, int b) {
         int result = a + b;
         logger.debug("SUM: "+ a +" + "+ b +" = " + result);
         return result;
     }
 
-    public final static int diff(int a, int b) {
+    public int diff(int a, int b) {
         int result = a - b;
         logger.debug("SUM: "+ a +" - "+ b +" = " + result);
+
+        if (databaseService.save())
+            logger.debug("Result salvato");
+        else
+            logger.debug("Result non salvato");
+
         return result;
     }
 }

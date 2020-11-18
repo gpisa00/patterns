@@ -1,11 +1,6 @@
 package it.arteprogrammazione.patterns.singleton;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class LoggerSingleton {
-
-    private static final Logger logger = LoggerFactory.getLogger("it.arteprogrammazione.patterns");
 
     private static LoggerSingleton instance;
 
