@@ -33,4 +33,19 @@ public class CalculatorTests {
         int b = 3;
         assertEquals(calculator.diff(a, b), -1);
     }
+
+    @Test
+    public void testDiff2() {
+        when(databaseService.save()).thenReturn(true);
+        int a = 2;
+        int b = 3;
+        assertEquals(calculator.diff(a, b), -1);
+    }
+
+    @Test
+    public void testMultiply() {
+        int a = 2;
+        int b = 3;
+        assertEquals(calculator.multiply(a, b), 6);
+    }
 }
